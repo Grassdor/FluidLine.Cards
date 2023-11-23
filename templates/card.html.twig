@@ -1,0 +1,9 @@
+<body>
+    <div class="grid">
+        {% for obj in preparedArr %}
+            {{ obj.getCardName() }}
+            {{ obj.getCardHost() }}
+            {{ obj.getCardLink() }}
+        {% endfor %}
+    </div>
+</body>
