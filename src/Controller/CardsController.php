@@ -11,9 +11,9 @@ class CardsController extends AbstractController
     #[Route('/card')]
     public function importCard(): Response
     {
-        
+        $server = $this->getParameter('kernel.project_dir');
 
-        $fp = file_get_contents("../public/uploads/cards.inc", "r");
+        $fp = file_get_contents($server . "/public/uploads/cards.inc", "r");
         $objArr = preg_split("/\n/", $fp);
         $preparedArr = [];
         foreach ($objArr as $item) {

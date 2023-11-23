@@ -1,9 +1,11 @@
 <body>
     <div class="grid">
         {% for obj in preparedArr %}
-            {{ obj.getCardName() }}
-            {{ obj.getCardHost() }}
-            {{ obj.getCardLink() }}
+            <div class="card">
+                <p>{{ obj.getCardName() }}</p>
+                <p>{{ obj.getCardHost() }}</p>
+                <p>{{ obj.getCardLink() }}</p>
+            </div>    
         {% endfor %}
     </div>
 </body>

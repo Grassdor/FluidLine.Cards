@@ -25,9 +25,10 @@ class NewCardController extends AbstractController
             $serializedCard = serialize($newCard);
             
             $fs = new Filesystem();
-
+            $server = $this->getParameter('kernel.project_dir');
             try {
-                $fs->appendToFile("uploads/cards.inc", $serializedCard . "\n");
+                $fs->appendToFile($server . "/public/uploads/cards.inc", $serializedCard . "\n");
+                // dd($fs);
             } catch (IOExceptionInterface $exception) {
                 echo "An error occurred while creating your directory at " . $exception->getPath();
             };
