@@ -1,10 +1,14 @@
+<link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
 <body>
     <div class="grid">
         {% for obj in preparedArr %}
             <div class="card">
-                <p>{{ obj.getCardName() }}</p>
-                <p>{{ obj.getCardHost() }}</p>
-                <p>{{ obj.getCardLink() }}</p>
+                <h1>{{ obj.getCardName() }}</h1>
+                <a href="http://{{ obj.getCardHost() }}">{{ obj.getCardHost() }}</a>
+                <div class="github">
+                    <p>Github:</p>
+                    <a href="https://{{ obj.getCardLink() }}">https://{{ obj.getCardLink() }}</a>
+                </div>
             </div>    
         {% endfor %}
     </div>

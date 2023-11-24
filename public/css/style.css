@@ -5,6 +5,11 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+
+h1 {
+    margin: 0;
 }
 
 form {
@@ -32,5 +37,30 @@ form {
         border-radius: 10px;
         border: solid 0px;
         font-weight: 700;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    height: 200px;
+    padding: 16px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.grid {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.github {
+    display: flex;
+    > p {
+        margin: 0 5px 0 0;
     }
 }
