@@ -17,6 +17,7 @@ class NewCardController extends AbstractController
     #[Route('/card/new')]
     public function form(Request $request): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $form = $this->createForm(NewCardType::class);
         // dump($form);
         $form->handleRequest($request);
@@ -27,7 +28,7 @@ class NewCardController extends AbstractController
             $fs = new Filesystem();
             $server = $this->getParameter('kernel.project_dir');
             try {
-                $fs->appendToFile($server . "/public/uploads/cards.inc", $serializedCard . "\n");
+                $fs->appendToFile($server . "/storage/cards.inc", $serializedCard . "\n");
                 // dd($fs);
             } catch (IOExceptionInterface $exception) {
                 echo "An error occurred while creating your directory at " . $exception->getPath();

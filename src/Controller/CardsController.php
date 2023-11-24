@@ -13,7 +13,7 @@ class CardsController extends AbstractController
     {
         $server = $this->getParameter('kernel.project_dir');
 
-        $fp = file_get_contents($server . "/public/uploads/cards.inc", "r");
+        $fp = file_get_contents($server . "/storage/cards.inc", "r");
         $objArr = preg_split("/\n/", $fp);
         $preparedArr = [];
         foreach ($objArr as $item) {
@@ -22,7 +22,7 @@ class CardsController extends AbstractController
             }
             
         }
-        return $this->render('card.html.twig', [
+        return $this->render('card/index.html.twig', [
             'preparedArr' => $preparedArr,
         ]);
     }
