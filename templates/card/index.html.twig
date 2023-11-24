@@ -26,6 +26,7 @@
             <a class="button" href="card/new/">Создать новую карточку</a>     
         <div class="grid">
             {% for obj in preparedArr %}
+            <div class="scroll">
                 <div class="card">
                     <h1>{{ obj.getCardName() }}</h1>
                     <a href="http://{{ obj.getCardHost() }}">{{ obj.getCardHost() }}</a>
@@ -33,7 +34,8 @@
                         <p>Github:</p>
                         <a href="{{ obj.getCardLink() }}">{{ obj.getCardLink() }}</a>
                     </div>
-                </div>    
+                </div>
+            </div>
             {% endfor %}
         </div>
     </body>

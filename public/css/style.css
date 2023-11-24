@@ -13,6 +13,8 @@
     h1 {
         margin: 0;
         font-size: 25px;
+        max-width: 340px;
+        word-break: break-all;
     }
 
     form {
@@ -136,14 +138,17 @@
     }
 
     .card {
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: 20px;
         width: 340px;
         height: 200px;
-        padding: 20px 40px 20px 20px;
-        border-radius: 17px;
+        
+        
         background: #fff;
+        overflow: scroll;
+        overflow-x: hidden;
 
         >a {
             text-decoration: none;
@@ -152,6 +157,31 @@
         }
     }
 
+    .scroll {
+        padding: 20px 20px 20px 20px;
+        background: #fff;
+        border-radius: 17px;
+    }
+
+    .card::-webkit-scrollbar {
+        width: 8px;
+ 
+
+                  /* ширина scrollbar */
+    }
+    .card::-webkit-scrollbar-track {
+        background: #D9D9D9;  
+        border-radius: 5px;
+        
+    }
+    .card::-webkit-scrollbar-thumb {
+        background: #fff;
+        border-radius: 2px;
+        border: #D9D9D9 solid 2px;
+        width: 10px;
+
+
+    }
     .grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -171,6 +201,7 @@
             text-decoration: none;
             color: #93D1FF;
             font-size: 15px;
+            word-break: break-all;
         }
     }
 
@@ -201,6 +232,7 @@
     h1 {
         margin: 0;
         font-size: 25px;
+        max-width: 340px;
     }
 
     .login {
@@ -328,8 +360,8 @@
         gap: 20px;
         width: auto;
         height: 200px;
-        padding: 20px 40px 20px 20px;
-        border-radius: 17px;
+        
+
         background: #fff;
 
         >a {
@@ -337,6 +369,31 @@
             color: #93D1FF;
             font-size: 15px;
         }
+    }
+
+    .scroll {
+        padding: 20px 20px 20px 20px;
+        background: #fff;
+        border-radius: 17px;
+    }
+
+    .card::-webkit-scrollbar {
+        width: 10px;
+ 
+
+                  /* ширина scrollbar */
+    }
+    .card::-webkit-scrollbar-track {
+        background: #D9D9D9;  
+        border-radius: 5px;
+        
+    }
+    .card::-webkit-scrollbar-thumb {
+        background: #fff;
+        border-radius: 8px;
+        width: 10px;
+
+
     }
 
     .grid {
@@ -358,8 +415,7 @@
             text-decoration: none;
             color: #93D1FF;
             font-size: 15px;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            word-break: break-all;
         }
     }
 
@@ -389,6 +445,7 @@
 
     h1 {
         margin: 0;
+        max-width: 340px;
         font-size: 25px;
     }
 
@@ -521,8 +578,7 @@
         gap: 20px;
         width: 340px;
         height: 200px;
-        padding: 20px 40px 20px 20px;
-        border-radius: 17px;
+        padding: 0 20px 0 0;
         background: #fff;
 
         >a {
@@ -530,6 +586,31 @@
             color: #93D1FF;
             font-size: 15px;
         }
+    }
+
+    .scroll {
+        padding: 20px 20px 20px 20px;
+        background: #fff;
+        border-radius: 17px;
+    }
+
+    .card::-webkit-scrollbar {
+        width: 10px;
+ 
+
+                  /* ширина scrollbar */
+    }
+    .card::-webkit-scrollbar-track {
+        background: #D9D9D9;  
+        border-radius: 5px;
+        
+    }
+    .card::-webkit-scrollbar-thumb {
+        background: #fff;
+        border-radius: 8px;
+        width: 10px;
+
+
     }
 
     .grid {
@@ -553,8 +634,7 @@
             font-size: 15px;
             overflow: hidden;
             text-overflow: ellipsis;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            word-break: break-all;
         }
     }
 
