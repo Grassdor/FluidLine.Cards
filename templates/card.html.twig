@@ -1,15 +1,36 @@
-<link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
-<body>
-    <div class="grid">
-        {% for obj in preparedArr %}
-            <div class="card">
-                <h1>{{ obj.getCardName() }}</h1>
-                <a href="http://{{ obj.getCardHost() }}">{{ obj.getCardHost() }}</a>
-                <div class="github">
-                    <p>Github:</p>
-                    <a href="https://{{ obj.getCardLink() }}">https://{{ obj.getCardLink() }}</a>
-                </div>
-            </div>    
-        {% endfor %}
-    </div>
-</body>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {% block stylesheets %}
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+        {% block head_css %}
+            <!-- Скопировать CSS из https://getbootstrap.com/docs/4.4/getting-started/introduction/#css -->
+        {% endblock %}
+        {% block head_js %}
+            <!-- Скопировать JavaScript из https://getbootstrap.com/docs/4.4/getting-started/introduction/#js -->
+        {% endblock %}
+    </head>
+    <body>
+        <a class="button" href="card/new/">Создать новую карточку</a>
+        <div class="grid">
+            {% for obj in preparedArr %}
+                <div class="card">
+                    <h1>{{ obj.getCardName() }}</h1>
+                    <a href="http://{{ obj.getCardHost() }}">{{ obj.getCardHost() }}</a>
+                    <div class="github">
+                        <p>Github:</p>
+                        <a href="https://{{ obj.getCardLink() }}">https://{{ obj.getCardLink() }}</a>
+                    </div>
+                </div>    
+            {% endfor %}
+        </div>
+    </body>
+</html>
