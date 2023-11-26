@@ -6,6 +6,7 @@ class NewCard
     protected string $cardName;
     protected string $cardHost;
     protected string $cardLink;
+    protected int $cardId;
 
     public function setCardName(string $cardName): void
     {
@@ -22,6 +23,11 @@ class NewCard
         $this->cardLink = $cardLink;
     }
 
+    public function setCardId(int $cardId): void
+    {
+        $this->cardId = $cardId;
+    }
+
     public function getCardName(): string
     {
         return $this->cardName;
@@ -35,5 +41,10 @@ class NewCard
     public function getCardLink(): string
     {
         return $this->cardLink;
+    }
+
+    public function getCardId(): int
+    {
+        return $this->cardId;
     }
 }
