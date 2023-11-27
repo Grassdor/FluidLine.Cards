@@ -6,19 +6,26 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Form\Type\NewCardType;
+use App\Form\Type\EditCardType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
+use App\Entity\NewCard;
 
-class NewCardController extends AbstractController
+class EditCardController extends AbstractController
 {
-    #[Route('/card/new')]
-    public function form(Request $request): Response
+    protected int $id = 1;
+
+    #[Route('/card/edit/{id}')]
+    public function form(Request $request, int $id): Response
     {
+
+        $card = new NewCard();
+        $card->setCardName('RazDvaTri');
+            
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
-        $form = $this->createForm(NewCardType::class);
+        $form = $this->createForm(EditCardType::class, null, ['empty_data' => $card]);
         // dump($form);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -36,8 +43,9 @@ class NewCardController extends AbstractController
 
             return $this->redirect('/card');
         }
-        return $this->render('card/new.html.twig', [
+        return $this->render('card/edit.html.twig', [
             'form' => $form,
+            'card' => $card,
         ]);
     }
 }

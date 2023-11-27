@@ -25,7 +25,7 @@
         </div>
             <a class="button" href="card/new/">Создать новую карточку</a>     
         <div class="grid">
-            {% for obj in preparedArr %}
+            {% for key, obj in preparedArr %}
             <div class="scroll">
                 <div class="card">
                     <h1>{{ obj.getCardName() }}</h1>
@@ -33,6 +33,7 @@
                     <div class="github">
                         <p>Github:</p>
                         <a href="{{ obj.getCardLink() }}">{{ obj.getCardLink() }}</a>
+                        <a href="card/edit/{{ key }}">ссылка!!!</a>
                     </div>
                 </div>
             </div>
