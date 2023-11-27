@@ -19,25 +19,32 @@
         {% endblock %}
     </head>
     <body>
-        <div class="login">
-            <a class="button" href="{{ path('app_logout') }}">Logout</a>
-            <a class="button" href="{{ path('app_login') }}">Login</a>
-        </div>
-            <a class="button" href="card/new/">Создать новую карточку</a>     
-        <div class="grid">
-            {% for key, obj in preparedArr %}
-            <div class="scroll">
-                <div class="card">
-                    <h1>{{ obj.getCardName() }}</h1>
-                    <a href="http://{{ obj.getCardHost() }}">{{ obj.getCardHost() }}</a>
-                    <div class="github">
-                        <p>Github:</p>
-                        <a href="{{ obj.getCardLink() }}">{{ obj.getCardLink() }}</a>
-                        <a href="card/edit/{{ key }}">ссылка!!!</a>
-                    </div>
-                </div>
+        <header>
+            <div class="buttonBlock">
+            {% if app.user %}
+                <a class="button" href="{{ path('app_logout') }}">Logout</a>
+            {% else %}
+                <a class="button" href="{{ path('app_login') }}">Login</a>
+            {% endif %}
+            <a class="button" href="card/new/">Создать новую карточку</a> 
             </div>
-            {% endfor %}
-        </div>
+        </header> 
+        <main>
+            <div class="grid">
+                {% for key, obj in preparedArr %}
+                <div class="scroll">
+                    <div class="card">
+                        <h1>{{ obj.getCardName() }}</h1>
+                        <a href="http://{{ obj.getCardHost() }}">{{ obj.getCardHost() }}</a>
+                        <div class="github">
+                            <p>Github:</p>
+                            <a href="{{ obj.getCardLink() }}">{{ obj.getCardLink() }}</a>
+                        </div>
+                    </div>
+                    <a class="editButton" href="card/edit/{{ key }}"></a>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
     </body>
 </html>

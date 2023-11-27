@@ -17,11 +17,11 @@ class EditCardType extends AbstractType
     {
         // dd($options);
         $builder
-        ->add('cardName', TextType::class, ['attr' => ['value' => $options["empty_data"]->getCardName()]])
-        ->add('cardHost', TextType::class, ['attr' => ['value' => $options["empty_data"]->getCardHost()]])
-        ->add('cardLink', TextType::class, ['attr' => ['value' => $options["empty_data"]->getCardLink()]])
-        ->add('id', HiddenType::class, ['attr' => ['value' => $options["empty_data"]->getCardName()]])
-        ->add('save', SubmitType::class, ['label' => 'Создать карточку'])
+        ->add('cardName', TextType::class, ['attr' => ['value' => $options["empty_data"]->getCardName()], 'label' => "Название карточки"])
+        ->add('cardHost', TextType::class, ['attr' => ['value' => $options["empty_data"]->getCardHost()], 'label' => "Ссылка на хост"])
+        ->add('cardLink', TextType::class, ['attr' => ['value' => $options["empty_data"]->getCardLink()], 'label' => "Ссылка на"])
+        ->add('cardId', HiddenType::class, ['attr' => ['value' => $options["empty_data"]->getCardName()]])
+        ->add('save', SubmitType::class, ['label' => 'Сохранить карточку'])
         ->add('reset', ResetType::class, ['label' => 'Отмена'])
         ;
     }
@@ -30,6 +30,7 @@ class EditCardType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => NewCard::class,
+
         ]);
     }
 }

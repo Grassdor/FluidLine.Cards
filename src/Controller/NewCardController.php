@@ -14,24 +14,26 @@ use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 
 class NewCardController extends AbstractController
 {
+
     #[Route('/card/new')]
     public function form(Request $request): Response
     {
+
+        
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
-        $fp = file_get_contents($server . "/storage/cards.inc", "r");
-        $preparedFp = unserialize($fp);
+        $server = $this->getParameter('kernel.project_dir');
+
+        $cardsArr = unserialize(file_get_contents($server . "/storage/cards.inc"));
+        // dd($cardsArr);
         $form = $this->createForm(NewCardType::class);
         // dump($form);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $newCard = $form->getData();
-            $preparedFp[] = $newCard;
+            $cardsArr[] = $newCard;
             
-            $fs = new Filesystem();
-            $server = $this->getParameter('kernel.project_dir');
             try {
-                $fs->appendToFile($server . "/storage/cards.inc", $serializedCard . "\n");
-                // dd($fs);
+                file_put_contents($server . "/storage/cards.inc", serialize($cardsArr));
             } catch (IOExceptionInterface $exception) {
                 echo "An error occurred while creating your directory at " . $exception->getPath();
             };
