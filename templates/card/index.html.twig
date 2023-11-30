@@ -1,37 +1,19 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {% block stylesheets %}
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
-        {% endblock %}
+{% extends 'base.html.twig' %}
 
-        {% block javascripts %}
-        {% endblock %}
-        {% block head_css %}
-            <!-- Скопировать CSS из https://getbootstrap.com/docs/4.4/getting-started/introduction/#css -->
-        {% endblock %}
-        {% block head_js %}
-            <!-- Скопировать JavaScript из https://getbootstrap.com/docs/4.4/getting-started/introduction/#js -->
-        {% endblock %}
-    </head>
-    <body>
+{% block body %}
         <header>
             <div class="buttonBlock">
             {% if app.user %}
                 <a class="button" href="{{ path('app_logout') }}">Logout</a>
+                <a class="button" href="card/new/">Создать новую карточку</a>
             {% else %}
                 <a class="button" href="{{ path('app_login') }}">Login</a>
             {% endif %}
-            <a class="button" href="card/new/">Создать новую карточку</a> 
             </div>
         </header> 
         <main>
             <div class="grid">
-                {% for key, obj in preparedArr %}
+                {% for obj in preparedArr %}
                 <div class="scroll">
                     <div class="card">
                         <h1>{{ obj.getCardName() }}</h1>
@@ -41,10 +23,9 @@
                             <a href="{{ obj.getCardLink() }}">{{ obj.getCardLink() }}</a>
                         </div>
                     </div>
-                    <a class="editButton" href="card/edit/{{ key }}"></a>
+                    <a class="editButton" href="card/edit/{{ loop.index - 1 }}"></a>
                 </div>
                 {% endfor %}
             </div>
         </main>
-    </body>
-</html>
+{% endblock %}
