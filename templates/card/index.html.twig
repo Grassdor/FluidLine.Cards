@@ -31,10 +31,13 @@
         </header>
         <aside>
             <div class="sidebar">
-                <a class="sidebar-row" href="">
-                    <h1></h1>
-                    <p></p>
+                {% for item in preparedArr %}
+                <a class="sidebar-row" href="http://{{ item.getCardHost() }}">
+                    <h1>{{ item.getCardName() }}</h1>
+                    <p>{{ item.getCardHost() }}</p>
                 </a>
+                <div class="sidebar-underline"></div>
+                {% endfor %}
             </div>
         </aside>
         <main>

@@ -19,6 +19,8 @@
             <!-- Скопировать JavaScript из https://getbootstrap.com/docs/4.4/getting-started/introduction/#js -->
         {% endblock %}
     </head>
-<link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
-{{ form(form) }}
+    <body class="page-form">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+        {{ form(form) }}
+    </body>
 </html>
