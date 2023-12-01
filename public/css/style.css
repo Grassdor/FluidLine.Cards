@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+* {
+    font-family: 'Inter';
+}
+
 @media (min-width: 375px) {
     body {
         background: #D9D9D9;
@@ -8,7 +12,6 @@
         align-items: center;
         flex-direction: column;
         height: 100%;
-        font-family: 'Inter';
         margin: 0;
     }
 
@@ -18,7 +21,6 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        font-family: 'Inter';
         margin: 0;
     }
 
@@ -36,11 +38,9 @@
     main {
         display: flex;
         justify-content: center;
-        align-items: center;
         align-items: end;
         flex-direction: column;
         height: 100%;
-        font-family: 'Inter';
         grid-column-start: 2;
         grid-column-end: 2;
         grid-row-start: 2;
@@ -66,14 +66,14 @@
         justify-content: space-between;
         align-items: center;
 
-        >input {
+        > input {
             height: 32px;
             border: solid 0px;
             border-radius: 8px;
             padding: 0 10px;
         }
 
-        >button {
+        > button {
             width: 100%;
             height: 32px;
             border-radius: 8px;
@@ -98,20 +98,20 @@
         padding: 20px;
         border-radius: 17px;
 
-        >div {
+        > div {
             width: 375px;
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            >input {
+            > input {
                 height: 32px;
                 border: solid 0px;
                 border-radius: 8px;
                 padding: 0 10px;
             }
 
-            >button {
+            > button {
                 width: 100%;
                 height: 32px;
                 border-radius: 8px;
@@ -122,76 +122,6 @@
             }
         }
     }
-
-    
-
-    #edit_card {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        background: #93D1FF;
-        padding: 20px;
-        border-radius: 17px;
-
-        >div {
-            width: 375px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            >input {
-                height: 32px;
-                border: solid 0px;
-                border-radius: 8px;
-                padding: 0 10px;
-            }
-
-            >button {
-                width: 100%;
-                height: 32px;
-                border-radius: 8px;
-                border: solid 0px;
-                background: #fff;
-                font-size: 16px;
-                cursor: pointer;
-            }
-        }
-    }
-
-    #register {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        background: #93D1FF;
-        padding: 20px;
-        border-radius: 17px;
-
-        >div {
-            width: 300px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            >input {
-                height: 32px;
-                border: solid 0px;
-                border-radius: 8px;
-                padding: 0 10px;
-            }
-
-            >button {
-                width: 100%;
-                height: 32px;
-                border-radius: 8px;
-                border: solid 0px;
-                background: #fff;
-                font-size: 16px;
-                cursor: pointer;
-            }
-        }
-    }
-
-
 
     .buttonBlock {
         display: flex;
@@ -204,8 +134,6 @@
         > a {
             margin: 0;
         }
-
-
     }
 
     .card {
@@ -215,13 +143,11 @@
         gap: 20px;
         width: 340px;
         height: 200px;
-        
-        
         background: #fff;
         overflow: auto;
         overflow-x: hidden;
 
-        >a {
+        > a {
             text-decoration: none;
             color: #93D1FF;
             font-size: 15px;
@@ -239,23 +165,20 @@
 
     .card::-webkit-scrollbar {
         width: 8px;
- 
+    }
 
-                  /* ширина scrollbar */
-    }
     .card::-webkit-scrollbar-track {
-        background: #D9D9D9;  
+        background: #D9D9D9;
         border-radius: 5px;
-        
     }
+
     .card::-webkit-scrollbar-thumb {
         background: #fff;
         border-radius: 2px;
         border: #D9D9D9 solid 2px;
         width: 10px;
-
-
     }
+
     .grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -266,6 +189,7 @@
     .github {
         display: flex;
         width: 340px;
+
         >p {
             margin: 0 5px 0 0;
             font-size: 15px;
@@ -310,7 +234,6 @@
         align-items: center;
         flex-direction: column;
         height: 100%;
-        font-family: 'Inter';
     }
 
     header {
@@ -318,7 +241,6 @@
         justify-content: end;
         width: 100%;
         height: 200px;
-
     }
 
     main {
@@ -327,7 +249,7 @@
         align-items: end;
         flex-direction: column;
         height: 100%;
-        font-family: 'Inter';
+
     }
 
     h1 {
@@ -340,102 +262,10 @@
         display: flex;
         margin-bottom: 8px;
         width: 300px;
+
         > a {
             width: 100%;
             text-align: center;
-        }
-    }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        background: #93D1FF;
-        padding: 20px;
-        border-radius: 17px;
-        width: fit-content;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        >input {
-            height: 32px;
-            border: solid 0px;
-            border-radius: 8px;
-            padding: 0 10px;
-        }
-
-        >button {
-            width: 100%;
-            height: 32px;
-            border-radius: 8px;
-            border: solid 0px;
-            background: #fff;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    }
-
-    #new_card {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-
-        >div {
-            width: 375px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            >input {
-                height: 32px;
-                border: solid 0px;
-                border-radius: 8px;
-                padding: 0 10px;
-            }
-
-            >button {
-                width: 100%;
-                height: 32px;
-                border-radius: 8px;
-                border: solid 0px;
-                background: #fff;
-                font-size: 16px;
-                cursor: pointer;
-            }
-        }
-    }
-
-    #edit_card {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        background: #93D1FF;
-        padding: 20px;
-        border-radius: 17px;
-
-        >div {
-            width: 375px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            >input {
-                height: 32px;
-                border: solid 0px;
-                border-radius: 8px;
-                padding: 0 10px;
-            }
-
-            >button {
-                width: 100%;
-                height: 32px;
-                border-radius: 8px;
-                border: solid 0px;
-                background: #fff;
-                font-size: 16px;
-                cursor: pointer;
-            }
         }
     }
 
@@ -447,20 +277,20 @@
         padding: 20px;
         border-radius: 17px;
 
-        >div {
+        > div {
             width: 300px;
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            >input {
+            > input {
                 height: 32px;
                 border: solid 0px;
                 border-radius: 8px;
                 padding: 0 10px;
             }
 
-            >button {
+            > button {
                 width: 100%;
                 height: 32px;
                 border-radius: 8px;
@@ -483,8 +313,6 @@
         > a {
             margin: 0;
         }
-
-
     }
 
     .card {
@@ -493,11 +321,9 @@
         gap: 20px;
         width: auto;
         height: 200px;
-        
-
         background: #fff;
 
-        >a {
+        > a {
             text-decoration: none;
             color: #93D1FF;
             font-size: 15px;
@@ -514,21 +340,17 @@
 
     .card::-webkit-scrollbar {
         width: 10px;
- 
-
-                  /* ширина scrollbar */
     }
+
     .card::-webkit-scrollbar-track {
-        background: #D9D9D9;  
+        background: #D9D9D9;
         border-radius: 5px;
-        
+
     }
     .card::-webkit-scrollbar-thumb {
         background: #fff;
         border-radius: 8px;
         width: 10px;
-
-
     }
 
     .grid {
@@ -541,12 +363,13 @@
     .github {
         display: flex;
         width: 340px;
-        >p {
+
+        > p {
             margin: 0 5px 0 0;
             font-size: 15px;
         }
 
-        >a {
+        > a {
             text-decoration: none;
             color: #93D1FF;
             font-size: 15px;
@@ -585,7 +408,7 @@
         align-items: center;
         flex-direction: column;
         height: 100vh;
-        font-family: 'Inter';
+
     }
 
     aside {
@@ -604,7 +427,6 @@
         justify-content: end;
         width: 100%;
         height: 200px;
-
     }
 
     main {
@@ -613,7 +435,7 @@
         align-items: center;
         flex-direction: column;
         height: 100%;
-        font-family: 'Inter';
+
         padding: 0 30px;
     }
 
@@ -627,6 +449,7 @@
         display: flex;
         margin-bottom: 8px;
         width: 300px;
+
         > a {
             width: 100%;
             text-align: center;
@@ -644,7 +467,7 @@
         justify-content: space-between;
         align-items: start;
 
-        >input {
+        > input {
             height: 32px;
             width: 280px;
             border: solid 0px;
@@ -652,11 +475,11 @@
             padding: 0 10px;
         }
 
-        >label {
+        > label {
             margin-left: 5px;
         }
 
-        >button {
+        > button {
             width: 100%;
             height: 32px;
             border-radius: 8px;
@@ -664,36 +487,6 @@
             background: #fff;
             font-size: 16px;
             cursor: pointer;
-        }
-    }
-
-    #new_card {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-
-        >div {
-            width: 375px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            >input {
-                height: 32px;
-                border: solid 0px;
-                border-radius: 8px;
-                padding: 0 10px;
-            }
-
-            >button {
-                width: 100%;
-                height: 32px;
-                border-radius: 8px;
-                border: solid 0px;
-                background: #fff;
-                font-size: 16px;
-                cursor: pointer;
-            }
         }
     }
 
@@ -705,53 +498,20 @@
         padding: 20px;
         border-radius: 17px;
 
-        >div {
+        > div {
             width: 375px;
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            >input {
+            > input {
                 height: 32px;
                 border: solid 0px;
                 border-radius: 8px;
                 padding: 0 10px;
             }
 
-            >button {
-                width: 100%;
-                height: 32px;
-                border-radius: 8px;
-                border: solid 0px;
-                background: #fff;
-                font-size: 16px;
-                cursor: pointer;
-            }
-        }
-    }
-
-    #register {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        background: #93D1FF;
-        padding: 20px;
-        border-radius: 17px;
-
-        >div {
-            width: 300px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            >input {
-                height: 32px;
-                border: solid 0px;
-                border-radius: 8px;
-                padding: 0 10px;
-            }
-
-            >button {
+            > button {
                 width: 100%;
                 height: 32px;
                 border-radius: 8px;
@@ -782,6 +542,7 @@
         justify-content: flex-start;
         gap: 10px;
         padding: 30px 0;
+
         > :last-child {
             display: none;
         }
@@ -799,13 +560,14 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        
+
         > h1 {
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
             width: 100%;
         }
+
         > p {
             margin: 0;
             width: 100%;
@@ -823,7 +585,7 @@
         padding: 0 20px 0 0;
         background: #fff;
 
-        >a {
+        > a {
             text-decoration: none;
             color: #93D1FF;
             font-size: 15px;
@@ -840,21 +602,17 @@
 
     .card::-webkit-scrollbar {
         width: 10px;
- 
-
-                  /* ширина scrollbar */
     }
+
     .card::-webkit-scrollbar-track {
         background: #D9D9D9;  
         border-radius: 5px;
-        
     }
+
     .card::-webkit-scrollbar-thumb {
         background: #fff;
         border-radius: 8px;
         width: 10px;
-
-
     }
 
     .grid {
@@ -867,12 +625,13 @@
     .github {
         display: flex;
         width: 340px;
-        >p {
+
+        > p {
             margin: 0 5px 0 0;
             font-size: 15px;
         }
 
-        >a {
+        > a {
             text-decoration: none;
             color: #93D1FF;
             font-size: 15px;
