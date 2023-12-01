@@ -8,10 +8,7 @@ security:
         backend_users:
             memory:
                 users: 
-                    '%env(USER_NAME)%': {password: '%env(USER_PASS)%', roles: ['%env(USER_ROLE)%']}
-                    
-                    
-                    
+                    '%env(USER_NAME)%': { password: '%env(USER_PASS)%', roles: ['%env(USER_ROLE)%'] }
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -21,14 +18,14 @@ security:
             provider: backend_users
 
             form_login:
-                username_parameter: "username"
-                password_parameter: "password"
+                username_parameter: "login[username]"
+                password_parameter: "login[password]"
                 login_path: app_login
                 check_path: app_login
-                default_target_path: /card
+                default_target_path: /
             logout:
                 path: app_logout
-                target: /card
+                target: /
                 # where to redirect after logout
                 # target: app_any_route
 
